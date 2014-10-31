@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'knife-solo', '~> 0.4'
 gem 'rake'
+gem 'knife-solo', '~> 0.4'
+gem 'berkshelf', '~> 3.2'
