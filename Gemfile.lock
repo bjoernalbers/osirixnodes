@@ -72,6 +72,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
+    pg (0.17.1)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -145,6 +146,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
+  pg (~> 0.17)
   rails (= 4.1.7)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
