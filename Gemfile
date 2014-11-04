@@ -42,6 +42,11 @@ group :development do
   gem 'capistrano-cookbook', require: false
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'capybara', '~> 2.4'
+end
+
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
