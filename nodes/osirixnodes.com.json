@@ -1,0 +1,49 @@
+{
+  "environment":"production",
+  "authorization": {
+    "sudo": {
+      "users": ["deploy"]
+    }
+  },
+  "rbenv":{
+    "rubies": [
+      "2.1.2"
+    ],
+    "global" : "2.1.2",
+    "gems": {
+      "2.1.2" : [
+        {"name":"bundler"}
+      ]
+    }
+  },
+  // "monit": {
+  //   "notify_email" : ["email@example.com"],
+  //   "enable_emails" : false,
+  //   "web_interface" : {
+  //     // the plaintext monit username and password
+  //     "allow" : ["your_username","your_password"]
+  //   },
+  //   "mailserver" : {
+  //     // the easiest option is to use something like
+  //     // Mailgun or Sengrid
+  //     "host" : "mailserver.example.com",
+  //     "port" : "999",
+  //     "username" : "your_username",
+  //     "password" : "your_password",
+  //     "hostname" : "the_hostname"
+  //   }
+  // },
+  "postgresql" : {
+    "password" : {
+      "postgres" : "$1$qdDB1haS$shoPdTOMHd1pdKmbmRyMX."
+    }
+  },
+  "run_list":
+  [
+    "role[server]",
+    "role[nginx]",
+    "role[postgres-server]",
+    "role[rails-app]"
+    // "role[redis-server]"
+  ]
+}

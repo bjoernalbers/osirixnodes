@@ -1,0 +1,9 @@
+{
+  "id": "deploy",
+  "password": "$1$qdDB1haS$shoPdTOMHd1pdKmbmRyMX.",
+  "ssh_keys": [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAzxjl2XGzTWM30YclU1vGfF8V5/iNzLtPavrBzhGk8bMEvZoMHbKR3ea/qgcdmLYW3u2EDI59VUXq7qNUULKznWCV7z2I13tR2F/iAPxV/oKjwt+eLn1x6XY4kxmSe39lBF8vMr3RrYGQiwmjXczQK4f+Umh3qsQTiS+zDjz+bY3W36JcdXaP9t0J+DxfEske+rYufTw8R5QDOTUBNGEWplLmXc3LASG3+AVM8Oil0ozA5x5G32PYqwMt9NUS0vyEjt685W874qkNSLfp1fSOJEdshrd5IzZc9q6boW/+LAV+hWyPeRPx0pNYRbnkGiPgtNYEvaMhQXEoDNy8qnKWrw== bjoernalbers@gmail.com"
+  ],
+  "groups": [ "sysadmin"],
+  "shell": "\/bin\/bash"
+}
