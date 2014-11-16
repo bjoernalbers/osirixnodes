@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Osirixnodes</title>
+  <title>OsiriXNodes</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img alt="Brand" src="...">
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
 
-<%= yield %>
+       <%= yield %>
 
+    </div>
+  </div>
 </body>
 </html>

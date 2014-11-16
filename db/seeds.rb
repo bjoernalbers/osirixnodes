@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+user = User.create!(email: 'hallo@osirixnodes.com',
+                    password: 'Surfer"Dolls90',
+                    api_key: 'example')
+user.nodes.create!(name: 'OsiriXNodes.com',
+                   host: '127.0.0.1',
+                   port: 11112,
+                   aetitle: 'OSIRIXNODES')
+

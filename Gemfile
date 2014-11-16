@@ -14,6 +14,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
+gem 'bootstrap-sass', '~> 3.3.0'
+gem 'autoprefixer-rails'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -34,6 +37,9 @@ gem 'pg', '~> 0.17'
 # Use unicorn as the app server
 gem 'unicorn', '~> 4.8'
 
+# Devise for authentication
+gem 'devise', '~> 3.4'
+
 group :development do
   gem 'capistrano', '~> 3.2'
   gem 'capistrano-rails', '~> 1.1'
@@ -44,7 +50,10 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
+  gem 'faker', '~> 1.4'
   gem 'capybara', '~> 2.4'
+  gem 'factory_girl_rails', '~> 4.5'
+  gem 'plist', '~> 3.1'
 end
 
 # Use debugger

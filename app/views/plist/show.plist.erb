@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+<% @nodes.each do |node| %>
+  <dict>
+    <key>AETitle</key>
+    <string><%= node.aetitle %></string>
+    <key>Activated</key>
+    <string>1</string>
+    <key>Address</key>
+    <string><%= node.address %></string>
+    <key>Description</key>
+    <string><%= node.name %></string>
+    <key>Port</key>
+    <integer><%= node.port %></integer>
+    <key>Send</key>
+    <true/>
+    <key>TransferSyntax</key>
+    <integer>0</integer>
+    <key>retrieveMode</key>
+    <integer>0</integer>
+  </dict>
+<% end %>
+</array>
+</plist>

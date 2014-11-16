@@ -1,0 +1,2 @@
+class PlistsController < ApplicationController
+end
