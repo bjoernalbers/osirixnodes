@@ -25,3 +25,39 @@ Then upload both files to server:
 
 See also:
 https://support.comodo.com/index.php?/Default/Knowledgebase/Article/View/789/37/certificate-installation-nginx
+
+
+## How to deploy a fresh server (with blank database)
+
+
+Bei DigitalOcean den Server neu aufsetzen (oder destroy > rebuild)
+...dauert ein paar Sekunden / Minütchen
+
+Die lokalen Host-Fingerabdrücke löschen (haben sich durch den neuen Server ja geändert)
+und zwar für osirixnodes.com und 192.241.222.25:
+
+    sed -i '' '/osirixnodes\.com/d' ~/.ssh/known_hosts
+
+Nach dem provisioning einloggen und schauen, ob der Server oben ist (dann wird auch der
+neue SSH-Fingerabdruck gespeichert):
+
+    ssh root@osirixnodes.com uptime
+
+In den Branch "provisioning" wechseln und dann den Server bootstrappen:
+
+**Achtung: Unter Ruby 2.1 gab es Probleme, d.h. bitte Ruby 2.0 verwenden!**
+
+    bundle exec knife solo bootstrap root@osirixnodes.com
+
+
+Dann das erste Deployment mit Capistrano...
+
+
+Vorher ausführen:
+
+    bundle exec cap production setup:all # Mein Task (etwas doppelt gemoppelt
+    bundle exec cap production deploy:setup_config # task von capistrano/cookbook (Deploying-Rails buch)
+
+Bei jedem Deployment ausführen:
+
+    bundle exec cap production deploy
