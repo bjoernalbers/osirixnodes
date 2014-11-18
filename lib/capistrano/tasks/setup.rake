@@ -6,7 +6,8 @@ namespace :setup do
   task ssl: :dir do
     on roles(:web) do
       %w(config/ssl_cert.crt config/ssl_private_key.key).each do |file|
-        upload! StringIO.new(File.read(file)), shared_path + file
+        path = shared_path + File.basename(file)
+        upload! StringIO.new(File.read(file)), path
       end
     end
   end
@@ -15,7 +16,8 @@ namespace :setup do
   task yml: :dir do
     on roles(:app) do
       %w(config/database.yml config/secrets.yml).each do |file|
-        upload! StringIO.new(File.read(file)), shared_path + file
+        path = shared_path + file
+        upload! StringIO.new(File.read(file)), path
       end
     end
   end
