@@ -35,11 +35,16 @@
   // },
   "postgresql" : {
     "password" : {
-      "postgres" : "$1$qdDB1haS$shoPdTOMHd1pdKmbmRyMX."
+      "postgres" : "md57e7764fe088f47bccafadfd552225e3b"
     }
   },
-  "run_list":
-  [
+  "osirixnodes_database": {
+    "postgres_password": "Hey#73Winger",
+    "database": "osirixnodes_production",
+    "username": "osirixnodes_production",
+    "password": "Hey#73Winger"
+  },
+  "run_list": [
     "role[server]",
     "role[nginx]",
     "role[postgres-server]",

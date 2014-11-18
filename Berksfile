@@ -21,3 +21,5 @@ cookbook 'postgresql', github: 'opscode-cookbooks/postgresql'
 cookbook 'hostnames', github: 'nathantsoi/chef-cookbook-hostname'
 
 cookbook 'locales', github: 'phbergsmann/chef-locales'
+
+cookbook 'database', '~> 2.3.0'

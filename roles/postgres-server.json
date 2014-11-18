@@ -2,11 +2,15 @@
    "name": "postgres-server",
    "description": "Postgres database server",
    "default_attributes": {
-
+     "build-essential": {
+       "compile_time": true
+     }
    },
    "json_class": "Chef::Role",
    "run_list": [
+      "build-essential",
       "postgresql::server",
+      "osirixnodes_database",
       "monit_configs-tlq::postgres"
    ],
    "chef_type": "role"
