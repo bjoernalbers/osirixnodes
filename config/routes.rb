@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     root to: 'nodes#index', as: :user_root
   end
   root to: 'pages#index'
-  resources :nodes, only: [:index, :new, :create]
+  resources :nodes
   resources :plist, only: :show
 end
