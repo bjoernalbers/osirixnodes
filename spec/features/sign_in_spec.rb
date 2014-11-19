@@ -18,6 +18,7 @@ feature 'Sign in' do
     expect(page).to have_content(/signed in successfully/i)
 
     # Should be on the own nodes page
-    expect(current_path).to eq '/nodes'
+    #expect(current_path).to eq '/nodes'
+    expect(current_path).to eq '/'
   end
 end
