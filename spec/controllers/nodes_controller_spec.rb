@@ -77,4 +77,47 @@ describe NodesController do
       expect(assigns(:node)).to eq(node)
     end
   end
+
+  describe 'GET #edit' do
+    let!(:node) { create(:node, user: user) }
+
+    it 'assigns node' do
+      get :edit, id: node
+      expect(assigns(:node)).to eq(node)
+    end
+  end
+
+  describe 'PATCH #update' do
+    let!(:node) { create(:node, user: user) }
+
+    context 'with valid attributes' do
+      let(:attributes) { attributes_for(:node) }
+
+      it 'assigns node' do
+        put :update, id: node, node: attributes
+        expect(assigns(:node)).to eq(node)
+      end
+
+      it 'redirects to nodes page' do
+        put :update, id: node, node: attributes
+        expect(response).to redirect_to(nodes_url)
+      end
+
+      it 'updates node' do
+        expect(node.name).to_not eq(attributes[:name])
+        put :update, id: node, node: attributes
+        node.reload
+        expect(node.name).to eq(attributes[:name])
+      end
+    end
+
+    context 'with invalid attributes' do
+      let(:attributes) { attributes_for(:node, name: nil) }
+
+      it 'renders edit page' do
+        put :update, id: node, node: attributes
+        expect(response).to render_template(:edit)
+      end
+    end
+  end
 end

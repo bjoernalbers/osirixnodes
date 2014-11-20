@@ -22,6 +22,19 @@ class NodesController < ApplicationController
     redirect_to nodes_url
   end
 
+  def edit
+    @node = nodes.find(params[:id])
+  end
+
+  def update
+    @node = nodes.find(params[:id])
+    if @node.update(node_params)
+      redirect_to nodes_url
+    else
+      render :edit
+    end
+  end
+
   private
 
   def nodes
