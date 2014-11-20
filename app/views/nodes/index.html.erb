@@ -1,4 +1,13 @@
-<%= link_to 'Add Node', new_node_path %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Your custom nodelist URL for OsiriX</h3>
+  </div>
+  <div class="panel-body">
+    <code>
+      <%= plist_url(current_user.api_key) %>
+    </code>
+  </div>
+</div>
 
 <table class="table">
   <thead>
@@ -24,3 +33,7 @@
     <% end %>
   </tbody>
 </table>
+
+<br>
+
+<%= link_to 'Add Node', new_node_path %>
