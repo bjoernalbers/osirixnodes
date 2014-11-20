@@ -16,6 +16,12 @@ class NodesController < ApplicationController
     end
   end
 
+  def destroy
+    @node = nodes.find(params[:id])
+    @node.destroy
+    redirect_to nodes_url
+  end
+
   private
 
   def nodes

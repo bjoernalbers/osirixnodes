@@ -16,7 +16,7 @@ describe 'PList API' do
       expect(response.status).to eq(200)
     end
 
-    it 'responds with the right content type' do
+    it 'responds with right content type' do
       expect(response.content_type).to eq 'application/xml'
     end
     
@@ -24,19 +24,19 @@ describe 'PList API' do
       expect(plist_response.count).to eq(1)
     end
 
-    it 'includes the node names' do
+    it 'includes node names' do
       expect(first_node['Description']).to eq(node.name)
     end
 
-    it 'includes the node aetitles' do
+    it 'includes node aetitles' do
       expect(first_node['AETitle']).to eq(node.aetitle)
     end
 
-    it 'includes the node addresses' do
+    it 'includes node addresses' do
       expect(first_node['Address']).to eq(node.address)
     end
 
-    it 'includes the node ports' do
+    it 'includes node ports' do
       expect(first_node['Port']).to eq(node.port)
     end
   end

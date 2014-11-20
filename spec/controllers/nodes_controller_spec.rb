@@ -57,4 +57,24 @@ describe NodesController do
       end
     end
   end
+
+  describe 'DELETE #destroy' do
+    let!(:node) { create(:node, user: user) }
+
+    it 'deletes node' do
+      expect{
+        delete :destroy, id: node
+      }.to change{user.nodes.count}.by(-1)
+    end
+
+    it 'redirects to nodes page' do
+      delete :destroy, id: node
+      expect(response).to redirect_to(nodes_url)
+    end
+
+    it 'assigns node' do
+      delete :destroy, id: node
+      expect(assigns(:node)).to eq(node)
+    end
+  end
 end
