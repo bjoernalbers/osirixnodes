@@ -40,6 +40,8 @@ gem 'unicorn', '~> 4.8'
 # Devise for authentication
 gem 'devise', '~> 3.4'
 
+gem 'mailgun_rails', '~> 0.6'
+
 group :development do
   gem 'capistrano', '~> 3.2'
   gem 'capistrano-rails', '~> 1.1'
