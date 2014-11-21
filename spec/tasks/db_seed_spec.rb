@@ -9,7 +9,7 @@ describe 'db:seed' do
   let(:email)   { 'example@osirixnodes.com' }
 
   # Node
-  let(:name)    { 'Example from OsiriXNodes.com' }
+  let(:name)    { 'OsiriXNodes.com' }
   let(:aetitle) { 'EXAMPLE' }
   let(:address) { '127.0.0.1' }
   let(:port)    { 11112 }
