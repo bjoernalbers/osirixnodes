@@ -12,7 +12,7 @@ feature 'Sign Up' do
     fill_in 'Password', with: password
     click_button 'Sign up'
 
-    expect(page).to have_content(/signed up successfully/i)
+    expect(page).to have_content(/confirmation/i)
 
     expect(current_path).to eq '/'
   end
