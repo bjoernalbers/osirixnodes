@@ -1,13 +1,9 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Your custom nodelist URL for OsiriX</h3>
+<form role="form">
+  <div class="form-group">
+    <label for="name">Your custom nodelist URL for OsiriX</label>
+    <input type="text" class="form-control" onclick="$(this).select();" value="<%= plist_url(current_user.api_key, protocol: 'https') %>" readonly>
   </div>
-  <div class="panel-body">
-    <code>
-      <%= plist_url(current_user.api_key) %>
-    </code>
-  </div>
-</div>
+</form>
 
 <table class="table">
   <thead>

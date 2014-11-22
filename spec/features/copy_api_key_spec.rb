@@ -11,7 +11,8 @@ feature 'View API key' do
     login_as(user, :scope => :user)
 
     visit '/'
-    #TODO: Test with right URL (incl. https)!
-    expect(page).to have_content("http://www.example.com/plist/#{user.api_key}")
+
+    url = "https://www.example.com/plist/#{user.api_key}"
+    expect(page).to have_selector("input[value='#{url}']")
   end
 end
