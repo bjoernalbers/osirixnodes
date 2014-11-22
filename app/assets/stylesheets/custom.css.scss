@@ -1,0 +1,16 @@
+$brand-primary: #BED742;
+$body-bg: #4C89CB;
+$text-color: #fff;
+$navbar-default-bg: #1B3962;
+$navbar-border-radius: none;
+$navbar-default-link-color: $brand-primary;
+$navbar-default-link-hover-color: darken($brand-primary, 6%);
+$border-radius-base: none;
+$headings-font-weight: normal;
+$btn-primary-color: #1B3962;
+
+a.navbar-brand {
+  font-family: Georgia, serif;
+  letter-spacing: 1px;
+  font-size: 24;
+}
