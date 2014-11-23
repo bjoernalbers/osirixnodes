@@ -1,1 +1,29 @@
-<h1>hey, there!</h1>
+<div class='jumbotron'>
+  <h1>
+    Secure DICOM Nodelist for OsiriX
+  </h1>
+  <h2>
+    <%= link_to 'Sign up now', new_user_registration_url %> for FREE (users are limited) during beta phase!
+  </h2>
+  <p>
+    You're working with <%= link_to 'OsiriX', 'http://www.osirix-viewer.com' %>
+    but still maintain DICOM nodelists on all workstations manually?
+    What if you could manage only <em>one</em> nodelist and automagically keep
+    all workstations up-to-date?
+  </p>
+  <p>
+    Well, actually you can:
+    <ol>
+      <li>Sign up for free at <%= link_to 'OsiriX Nodes', new_user_registration_url %></li>
+      <li>Add some nodes</li>
+      <li>Setup OsiriX to sync the nodelist from here (<em>OsiriX-Settings: Nodes</em>)... done.
+    </ol>
+  </p>
+  <p>
+    <b>(PS: Your nodelist is encrypted via HTTPS and protected by a private 128-bit key!)</b>
+  </p>
+  <p>
+    Got questions, feedback or wanna say hi? Cool: Just drop a line to <%=
+    link_to('support@osirixnodes.com', 'mailto:support@osirixnodes.com') %>.
+  </p>
+</div>
