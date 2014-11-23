@@ -1,4 +1,4 @@
-<%= form_for(@node) do |f| %>
+<%= form_for(@node, html: { class: 'form-inline' }) do |f| %>
   <% if @node.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@node.errors.count, "error") %> prohibited this node from being saved:</h2>
@@ -11,23 +11,9 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :port %><br>
-    <%= f.text_field :port %>
-  </div>
-  <div class="field">
-    <%= f.label :aetitle %><br>
-    <%= f.text_field :aetitle %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
+  <%= f.text_field :aetitle, class: 'form-control', placeholder: 'Aetitle' %>
+  <%= f.text_field :address, class: 'form-control', placeholder: 'Address' %>
+  <%= f.text_field :port, class: 'form-control', placeholder: 'Port' %>
+  <%= f.submit nil, class: 'btn btn-primary' %>
 <% end %>
