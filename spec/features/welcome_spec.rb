@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 feature 'Welcome' do
-  scenario 'displays friendly hello message' do
+  scenario 'displays support email' do
     visit '/'
-    expect(page).to have_content('hey, there!')
+    expect(page).to have_content('support@osirixnodes.com')
   end
 end
