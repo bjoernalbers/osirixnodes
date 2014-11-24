@@ -23,3 +23,5 @@ cookbook 'hostnames', github: 'nathantsoi/chef-cookbook-hostname'
 cookbook 'locales', github: 'phbergsmann/chef-locales'
 
 cookbook 'database', '~> 2.3.0'
+
+cookbook 'newrelic', '~> 2.4.0'

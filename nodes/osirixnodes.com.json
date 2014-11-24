@@ -44,11 +44,15 @@
     "username": "osirixnodes_production",
     "password": "Hey#73Winger"
   },
+  "newrelic": {
+    "license": "bee39141c0682e3892d8d26e3f5ccfa17d9e7f86"
+  },
   "run_list": [
     "role[server]",
     "role[nginx]",
     "role[postgres-server]",
-    "role[rails-app]"
+    "role[rails-app]",
+    "recipe[newrelic]"
     // "role[redis-server]"
   ]
 }

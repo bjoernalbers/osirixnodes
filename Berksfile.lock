@@ -35,6 +35,7 @@ DEPENDENCIES
   mysql
     git: git://github.com/opscode-cookbooks/mysql.git
     revision: abf418550a534cee433ded5f85a85f3296a9709e
+  newrelic (~> 2.4.0)
   nginx-tlq
     git: git://github.com/TalkingQuickly/nginx-tlq.git
     revision: 863f0faadbc5c61e925cb7de10dba97fc695fa89
@@ -64,6 +65,7 @@ GRAPH
   build-essential (2.0.5)
   chef-solo-search (0.5.1)
   chef-sugar (2.3.0)
+  curl (2.0.1)
   database (2.3.0)
     aws (>= 0.0.0)
     mysql (>= 5.0.0)
@@ -86,6 +88,9 @@ GRAPH
   mysql-chef_gem (0.0.5)
     build-essential (>= 0.0.0)
     mysql (>= 0.0.0)
+  newrelic (2.4.0)
+    curl (>= 0.0.0)
+    python (>= 0.0.0)
   nginx-tlq (0.0.4)
   openssl (2.0.0)
     chef-sugar (>= 0.0.0)
@@ -93,6 +98,9 @@ GRAPH
     apt (>= 1.9.0)
     build-essential (>= 0.0.0)
     openssl (>= 0.0.0)
+  python (1.4.6)
+    build-essential (>= 0.0.0)
+    yum-epel (>= 0.0.0)
   rails_gem_dependencies-tlq (0.0.3)
     apt (>= 0.0.0)
   rbenv (0.7.3)
@@ -104,5 +112,7 @@ GRAPH
   users (1.7.1)
   xfs (1.1.0)
   yum (3.2.2)
+  yum-epel (0.5.3)
+    yum (~> 3.0)
   yum-mysql-community (0.1.8)
     yum (>= 3.0.0)
