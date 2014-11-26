@@ -39,6 +39,10 @@ describe 'PList API' do
     it 'includes node ports' do
       expect(first_node['Port']).to eq(node.port)
     end
+
+    it 'includes node transfer syntax value' do
+      expect(first_node['TransferSyntax']).to eq(node.transfer_syntax.value)
+    end
   end
 
   describe 'with invalid API key' do

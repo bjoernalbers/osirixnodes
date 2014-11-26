@@ -9,9 +9,10 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Aetitle</th>
       <th>Address</th>
       <th>Port</th>
-      <th>Aetitle</th>
+      <th>Transfer Syntax</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -20,9 +21,10 @@
     <% @nodes.each do |node| %>
       <tr>
         <td><%= node.name %></td>
+        <td><%= node.aetitle %></td>
         <td><%= node.address %></td>
         <td><%= node.port %></td>
-        <td><%= node.aetitle %></td>
+        <td><%= node.transfer_syntax.name %></td>
         <td><%= link_to 'Edit', edit_node_path(node) %></td>
         <td><%= link_to 'Delete', node, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

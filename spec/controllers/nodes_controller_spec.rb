@@ -26,14 +26,22 @@ describe NodesController do
 
   describe 'POST #create' do
     context 'with valid attributes' do
+      let(:explicit_little_endian) { create(:transfer_syntax, value: 0) }
+
+      let(:attributes) do
+        attr = attributes_for(:node)
+        attr[:transfer_syntax_id] = explicit_little_endian.id
+        attr
+      end
+
       it 'creates new user node' do
         expect{
-          post :create, node: attributes_for(:node)
+          post :create, node: attributes
         }.to change{user.nodes.count}.by(1)
       end
 
       it 'redirects to nodes page' do
-        post :create, node: attributes_for(:node)
+        post :create, node: attributes
         expect(response).to redirect_to nodes_path
       end
 
