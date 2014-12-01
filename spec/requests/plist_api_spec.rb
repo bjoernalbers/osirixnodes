@@ -41,7 +41,7 @@ describe 'PList API' do
     end
 
     it 'includes node transfer syntax value' do
-      expect(first_node['TransferSyntax']).to eq(node.transfer_syntax.value)
+      expect(first_node['TransferSyntax']).to eq(node.transfer_syntax)
     end
   end
 

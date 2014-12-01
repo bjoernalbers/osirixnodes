@@ -26,13 +26,7 @@ describe NodesController do
 
   describe 'POST #create' do
     context 'with valid attributes' do
-      let(:explicit_little_endian) { create(:transfer_syntax, value: 0) }
-
-      let(:attributes) do
-        attr = attributes_for(:node)
-        attr[:transfer_syntax_id] = explicit_little_endian.id
-        attr
-      end
+      let(:attributes) { attributes_for(:node) }
 
       it 'creates new user node' do
         expect{

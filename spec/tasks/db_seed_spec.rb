@@ -37,46 +37,6 @@ describe 'db:seed' do
     end
   end
 
-  describe 'transfer syntaxes' do
-    let(:transfer_syntaxes) do
-      {
-        'Explicit Little Endian'           => 0,
-        'Implicit Little Endian'           => 9,
-        'JPEG 2000 Lossless'               => 1,
-        'JPEG 2000 Lossy - High Quality'   => 2,
-        'JPEG 2000 Lossy - Medium Quality' => 3,
-        'JPEG 2000 Lossy - Low Quality'    => 4,
-        'JPEG LS Lossless'                 => 13,
-        'JPEG LS Lossy - High Quality'     => 15,
-        'JPEG LS Lossy - Medium Quality'   => 16,
-        'JPEG LS Lossy - Low Quality'      => 14,
-        'JPEG Lossless'                    => 5
-      }
-    end
-
-    def validate_transfer_syntaxes
-      transfer_syntaxes.each do |name,value|
-        transfer_syntax = TransferSyntax.find_by(value: value)
-        expect(transfer_syntax).to be,
-          "Transfer Syntax #{value} missing (#{name})"
-        expect(transfer_syntax.name).to eq(name)
-      end
-    end
-
-    it 'creates missing' do
-      run_task
-      validate_transfer_syntaxes
-    end
-
-    it 'updates existing' do
-      transfer_syntaxes.values.each do |value|
-        TransferSyntax.create!(value: value, name: 'Chunky Bacon')
-      end
-      run_task
-      validate_transfer_syntaxes
-    end
-  end
-
   context 'with unseeded database' do
     before do
       run_task

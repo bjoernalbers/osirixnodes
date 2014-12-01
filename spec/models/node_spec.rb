@@ -11,10 +11,6 @@ RSpec.describe Node, :type => :model do
     expect(node.user.class).to be User
   end
 
-  it 'belongs to transfer syntax' do
-    expect(node.transfer_syntax.class).to be TransferSyntax
-  end
-
   it 'validates user presence' do
     node = build(:node, user: nil)
     expect(node).to be_invalid
@@ -50,9 +46,15 @@ RSpec.describe Node, :type => :model do
     expect(node.errors[:aetitle]).to_not be_empty
   end
 
-  it 'validates transfer syntax presence' do
-    node = build(:node, transfer_syntax: nil)
-    expect(node).to be_invalid
-    expect(node.errors[:transfer_syntax]).to_not be_empty
+  describe '#transfer_syntax' do
+    it 'defaults to 0' do
+      expect(node.transfer_syntax).to eq 0
+    end
+  end
+
+  describe '#transfer_syntax_name' do
+    it 'translates to human-readable format' do
+      expect(node.transfer_syntax_name).to eq 'Explicit Little Endian'
+    end
   end
 end

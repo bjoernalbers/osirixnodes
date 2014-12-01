@@ -82,7 +82,7 @@ feature 'Add Nodes' do
     fill_in 'Port', with: 5678
     fill_in 'Aetitle', with: 'MYFIRSTNODE'
     #select('JPEG 2000 Lossless', from: 'Transfer Syntax')
-    select('JPEG 2000 Lossless', from: 'node[transfer_syntax_id]')
+    select('JPEG 2000 Lossless', from: 'node[transfer_syntax]')
     click_button 'Create Node'
 
     expect(page).to have_content('JPEG 2000 Lossless')

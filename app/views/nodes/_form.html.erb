@@ -15,6 +15,6 @@
   <%= f.text_field :aetitle, class: 'form-control', placeholder: 'Aetitle' %>
   <%= f.text_field :address, class: 'form-control', placeholder: 'Address' %>
   <%= f.text_field :port, class: 'form-control', placeholder: 'Port' %>
-  <%= f.collection_select :transfer_syntax_id, TransferSyntax.order(:name), :id, :name, {}, {class: 'form-control'} %>
+  <%= f.select :transfer_syntax, Node::TRANSFER_SYNTAX.collect { |k,v| [v, k] }, {}, {class: 'form-control'} %>
   <%= f.submit nil, class: 'btn btn-primary' %>
 <% end %>

@@ -5,6 +5,5 @@ FactoryGirl.define do
     port { %w(104 3140 4096 4444 5678 11112).sample }
     aetitle { name.upcase.gsub(/[^A-Z]/, '') unless name.nil? }
     user
-    transfer_syntax
   end
 end

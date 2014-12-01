@@ -43,6 +43,6 @@ class NodesController < ApplicationController
 
   def node_params
     params.require(:node).
-      permit(:name, :aetitle, :address, :port, :transfer_syntax_id)
+      permit(:name, :aetitle, :address, :port, :transfer_syntax)
   end
 end

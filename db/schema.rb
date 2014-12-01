@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141126223954) do
+ActiveRecord::Schema.define(version: 20141201204554) do
 
   create_table "nodes", force: true do |t|
     t.string   "name"
@@ -20,18 +20,10 @@ ActiveRecord::Schema.define(version: 20141126223954) do
     t.string   "aetitle"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id",            null: false
+    t.integer  "user_id",                        null: false
     t.integer  "transfer_syntax_id"
+    t.integer  "transfer_syntax",    default: 0, null: false
   end
-
-  create_table "transfer_syntaxes", force: true do |t|
-    t.integer  "value",      null: false
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "transfer_syntaxes", ["value"], name: "index_transfer_syntaxes_on_value", unique: true
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
