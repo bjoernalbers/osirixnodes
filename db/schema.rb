@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141201204554) do
+ActiveRecord::Schema.define(version: 20141201213602) do
 
   create_table "nodes", force: true do |t|
     t.string   "name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20141201204554) do
     t.integer  "user_id",                        null: false
     t.integer  "transfer_syntax_id"
     t.integer  "transfer_syntax",    default: 0, null: false
+    t.integer  "retrieve_mode",      default: 0, null: false
   end
 
   create_table "users", force: true do |t|

@@ -1,4 +1,10 @@
 class Node < ActiveRecord::Base
+  RETRIEVE_MODE = {
+    0 => 'C-MOVE',
+    1 => 'C-GET',
+    #2 => 'WADO', # NOTE: Disables because of missing fields!
+  }
+
   TRANSFER_SYNTAX = {
     0  => 'Explicit Little Endian',
     9  => 'Implicit Little Endian',
@@ -23,5 +29,9 @@ class Node < ActiveRecord::Base
 
   def transfer_syntax_name
     TRANSFER_SYNTAX[transfer_syntax]
+  end
+
+  def retrieve_mode_name
+    RETRIEVE_MODE[retrieve_mode]
   end
 end

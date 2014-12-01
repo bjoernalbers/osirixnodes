@@ -57,4 +57,16 @@ RSpec.describe Node, :type => :model do
       expect(node.transfer_syntax_name).to eq 'Explicit Little Endian'
     end
   end
+
+  describe '#retrieve_mode' do
+    it 'defaults to 0' do
+      expect(node.retrieve_mode).to eq 0
+    end
+  end
+
+  describe '#retrieve_mode_name' do
+    it 'translates to human-readable format' do
+      expect(node.retrieve_mode_name).to eq 'C-MOVE'
+    end
+  end
 end

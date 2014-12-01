@@ -56,7 +56,7 @@ feature 'Add Nodes' do
   # 'JPEG LS Lossy - Low Quality'      => 14,
   # 'JPEG Lossless'                    => 5
 
-  scenario 'with default transfer syntax' do
+  scenario 'with default attributes' do
     user = FactoryGirl.create(:user)
     login_as(user, :scope => :user)
 
@@ -69,9 +69,10 @@ feature 'Add Nodes' do
     click_button 'Create Node'
 
     expect(page).to have_content('Explicit Little Endian')
+    expect(page).to have_content('C-MOVE')
   end
 
-  scenario 'with custom transfer syntax' do
+  scenario 'with non-default attributes' do
     user = FactoryGirl.create(:user)
     login_as(user, :scope => :user)
 
@@ -83,8 +84,10 @@ feature 'Add Nodes' do
     fill_in 'Aetitle', with: 'MYFIRSTNODE'
     #select('JPEG 2000 Lossless', from: 'Transfer Syntax')
     select('JPEG 2000 Lossless', from: 'node[transfer_syntax]')
+    select('C-GET', from: 'node[retrieve_mode]')
     click_button 'Create Node'
 
     expect(page).to have_content('JPEG 2000 Lossless')
+    expect(page).to have_content('C-GET')
   end
 end
