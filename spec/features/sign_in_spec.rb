@@ -1,4 +1,4 @@
-# All users have to log in
+# All users have to sign in
 # in order to edit their tasks
 # because users want security
 
@@ -10,10 +10,10 @@ feature 'Sign in' do
     user = FactoryGirl.create(:user, email: email, password: password)
 
     visit '/'
-    click_link 'Log in'
+    click_link 'Sign in'
     fill_in 'Email', with: email
     fill_in 'Password', with: password
-    click_button 'Log in'
+    click_button 'Sign in'
 
     expect(page).to have_content(/signed in successfully/i)
 

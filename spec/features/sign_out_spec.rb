@@ -10,7 +10,7 @@ feature 'Sign out' do
     login_as(user, :scope => :user)
 
     visit '/'
-    click_link 'Log out'
+    click_link 'Sign out'
 
     expect(page).to have_content(/signed out successfully/i)
     expect(current_path).to eq '/'
