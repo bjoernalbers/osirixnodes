@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :nodes
+  has_many :nodes, dependent: :destroy
 
   before_create :generate_api_key
 

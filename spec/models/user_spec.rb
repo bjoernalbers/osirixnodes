@@ -66,4 +66,12 @@ RSpec.describe User, :type => :model do
       end
     end
   end
+
+  it 'deletes dependend nodes on destroy' do
+    user = create(:user)
+    node = create(:node, user: user)
+    expect(Node).to exist(node)
+    user.destroy
+    expect(Node).to_not exist(node)
+  end
 end
