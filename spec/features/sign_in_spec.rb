@@ -16,6 +16,7 @@ feature 'Sign in' do
     click_button 'Sign in'
 
     expect(page).to have_content(/signed in successfully/i)
+    expect(page).to have_content(user.email)
 
     # Should be on the own nodes page
     #expect(current_path).to eq '/nodes'
