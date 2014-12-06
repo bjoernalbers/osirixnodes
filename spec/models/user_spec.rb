@@ -74,4 +74,15 @@ RSpec.describe User, :type => :model do
     user.destroy
     expect(Node).to_not exist(node)
   end
+
+  it 'creates sample node after create' do
+    user = create(:user)
+    user.send(:create_sample_node) #TODO: Remove this hack!
+    expect(user.nodes.count).to eq 1
+    node = user.nodes.first
+    expect(node.name).to eq 'Your wonderful example node'
+    expect(node.aetitle).to eq 'HELLO'
+    expect(node.address).to eq '127.0.0.1'
+    expect(node.port).to eq 11112
+  end
 end
