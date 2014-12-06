@@ -1,9 +1,14 @@
-<form role="form">
-  <div class="form-group">
-    <label for="name">Your custom nodelist URL for OsiriX</label>
-    <input type="text" class="form-control" onclick="$(this).select();" value="<%= plist_url(current_user.api_key, protocol: 'https') %>" readonly>
+<div class='form-horizontal' role="form">
+  <div class='form-group'>
+    <label for="name" class='control-label col-md-4'>Your private DICOM-Nodelist URL</label>
+    <div class='col-md-8'>
+      <input type="text" class="form-control" onclick="$(this).select();" value="<%= plist_url(current_user.api_key, protocol: 'https') %>" readonly>
+      <p class="help-block">Copy &amp; Paste this into OsiriX (Settings &#8594; Nodes &#8594; "Automatically sync the DICOM Nodes list from this URL")</p>
+    </div>
   </div>
 </form>
+
+<h2>Nodes</h2>
 
 <table class="table">
   <thead>
@@ -36,4 +41,4 @@
 
 <br>
 
-<%= link_to 'Add Node', new_node_path %>
+<%= link_to 'Add Node', new_node_path, class: 'btn btn-primary' %>
