@@ -1,29 +1,79 @@
-<div class='jumbotron'>
+<div class='jumbotron text-center'>
   <h1>
-    Secure DICOM Nodelist for OsiriX
+    Secure DICOM Nodelist for <%= link_to 'OsiriX', 'http://www.osirix-viewer.com', title: 'The most advanced DICOM Viewer / Workstation on earth' %>
   </h1>
   <h2>
-    <%= link_to 'Sign up now', new_user_registration_url %> for FREE (users are limited) during beta phase!
+    Many OsiriX Workstations. Only <em>one</em> DICOM Nodelist to manage.
   </h2>
+  <br>
   <p>
-    You're working with <%= link_to 'OsiriX', 'http://www.osirix-viewer.com' %>
-    but still maintain DICOM nodelists on all workstations manually?
-    What if you could manage only <em>one</em> nodelist and automagically keep
-    all workstations up-to-date?
-  </p>
-  <p>
-    Well, actually you can:
-    <ol>
-      <li>Sign up for free at <%= link_to 'OsiriX Nodes', new_user_registration_url %></li>
-      <li>Add some nodes</li>
-      <li>Setup OsiriX to sync the nodelist from here (<em>OsiriX-Settings: Nodes</em>)... done.
-    </ol>
-  </p>
-  <p>
-    <b>(PS: Your nodelist is encrypted via HTTPS and protected by a private 128-bit key!)</b>
-  </p>
-  <p>
-    Got questions, feedback or wanna say hi? Cool: Just drop a line to <%=
-    link_to('support@osirixnodes.com', 'mailto:support@osirixnodes.com') %>.
+    <%= link_to 'Sign up for FREE', new_user_registration_url,
+      class: 'btn btn-primary btn-lg' %>
   </p>
 </div>
+
+<h2>
+  The pain with multiple workstations
+</h2>
+<p class='lead'>
+  Sure, you love
+  <%= link_to 'OsiriX', 'http://www.osirix-viewer.com',
+    title: 'The most advanced DICOM Viewer / Workstation on earth' %>,
+  the most advanced DICOM Viewer on earth.
+  But setting up a new workstation with OsiriX takes time: you have to manually
+  type in your whole DICOM nodelist in order to fetch studies (your 1st, 2nd,
+  3rd... and 18th PACS, one or two disk robots, some offsite locations, other
+  departments, etc.).
+  And at the slighest nodelist change you'll end up touching every workstation
+  again.
+</p>
+<p class='lead'>
+  That is just boring manual work for trained monkeys.
+  That's not for you, right?
+</p>
+
+<h2>
+  An overlocked feature of OsiriX
+</h2>
+<p class='lead'>
+  What if you could manage only <em>one</em> nodelist and automagically keep
+  all workstations up-to-date?
+  Well, actually you can.
+  OsiriX has this great feature to load a nodelist from a remote URL.
+  But hosting and updating such remote server is a task on itself and quite the
+  opposite of user-friendly (trust me, I've been there).
+  Isn't there a better way?
+</p>
+  
+<h2>
+  A simple fix
+</h2>
+<p class='lead'>
+  <em>OsiriX Nodes</em> lets you manage your DICOM nodelist online, so that
+  your workstations can download this nodelist over a private and secure URL.
+  Just <%= link_to 'sign up for free', new_user_registration_url %>, add your
+  nodes and update your workstations to use the new URL.
+  Done.
+  All your workstations will updated themselfs on each OsiriX restart.
+</p>
+
+<h2>
+  Secure is secure is secure
+</h2>
+<p class='lead'>
+  OsiriX Nodes cares about your data as much as you do, even though a nodelist
+  contains no sensitive data.
+  All connections are forced over SSL-encrypted tunnels.
+  And your worklist can only be downloaded over a private URL which is itself
+  protected by a unique 128-bit key.
+  (Some might say this is paranoid.)
+</p>
+
+<h2>
+  Questions?
+</h2>
+<p class='lead'>
+  Got questions, feedback or just wanna say hi? Just drop a line to <%=
+  link_to('support@osirixnodes.com', 'mailto:support@osirixnodes.com') %>.
+  I'm here to help.
+</p>
