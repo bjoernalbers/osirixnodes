@@ -10,6 +10,9 @@
     <%= link_to 'Sign up for FREE', new_user_registration_url,
       class: 'btn btn-primary btn-lg' %>
   </p>
+  <p>
+    (Hurry: Only 99 BETA seats left!)
+  </p>
 </div>
 
 <h2>
@@ -20,14 +23,12 @@
   <%= link_to 'OsiriX', 'http://www.osirix-viewer.com',
     title: 'The most advanced DICOM Viewer / Workstation on earth' %>,
   the most advanced DICOM Viewer on earth.
-  But setting up a new workstation with OsiriX takes time: you have to manually
-  type in your whole DICOM nodelist in order to fetch studies (your 1st, 2nd,
-  3rd... and 18th PACS, one or two disk robots, some offsite locations, other
-  departments, etc.).
+  But setting up a new workstation with OsiriX takes time: you manually have to
+  type in your whole DICOM nodelist in order to transfer studies between your
+  1st, 2nd,... and n-th PACS, the fancy disk robot, a few offsite
+  locations, some other departments, etc.
   And at the slighest nodelist change you'll end up touching every workstation
   again.
-</p>
-<p class='lead'>
   That is just boring manual work for trained monkeys.
   That's not for you, right?
 </p>
@@ -40,40 +41,46 @@
   all workstations up-to-date?
   Well, actually you can.
   OsiriX has this great feature to load a nodelist from a remote URL.
-  But hosting and updating such remote server is a task on itself and quite the
+  There is only one downside:
+  Self-hosting and updating such remote server is a task on itself and quite the
   opposite of user-friendly (trust me, I've been there).
-  Isn't there a better way?
+  Isn't there a better way? Yes.
 </p>
   
 <h2>
-  A simple fix
+  Keep it simpler
 </h2>
 <p class='lead'>
   <em>OsiriX Nodes</em> lets you manage your DICOM nodelist online, so that
-  your workstations can download this nodelist over a private and secure URL.
+  your workstations can download it over a private and secure URL.
   Just <%= link_to 'sign up for free', new_user_registration_url %>, add your
   nodes and update your workstations to use the new URL.
   Done.
-  All your workstations will updated themselfs on each OsiriX restart.
+  Your workstations will pick up nodelist updates on each OsiriX restart.
 </p>
 
 <h2>
   Secure is secure is secure
 </h2>
 <p class='lead'>
-  OsiriX Nodes cares about your data as much as you do, even though a nodelist
-  contains no sensitive data.
+  I care about your data as much as you do, even though a nodelist contains no
+  sensitive data.
   All connections are forced over SSL-encrypted tunnels.
-  And your worklist can only be downloaded over a private URL which is itself
-  protected by a unique 128-bit key.
+  And your worklist can only be downloaded over a private URL,
+  protected by a unique and strong 128-bit key.
   (Some might say this is paranoid.)
+</p>
+<p>
+  <a href="http://instantssl.com/ssl.html">
+    <img alt="SSL" src="http://www.instantssl.com/ssl-certificate-images/support/comodo_secure_100x85_transp.png" />
+  </a>
 </p>
 
 <h2>
   Questions?
 </h2>
 <p class='lead'>
-  Got questions, feedback or just wanna say hi? Just drop a line to <%=
-  link_to('support@osirixnodes.com', 'mailto:support@osirixnodes.com') %>.
+  Got questions, feedback or just wanna say hi?
+  Just drop a line to <%= support_email %>.
   I'm here to help.
 </p>
