@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'pages/index'
+  get 'pages/about'
+  get 'pages/privacy'
+
   authenticated :user do
     root to: 'nodes#index', as: :user_root
   end
