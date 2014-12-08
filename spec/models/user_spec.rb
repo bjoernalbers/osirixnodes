@@ -85,4 +85,22 @@ RSpec.describe User, :type => :model do
     expect(node.address).to eq '127.0.0.1'
     expect(node.port).to eq 11112
   end
+
+  describe '.left_beta_accounts' do
+    it 'returns 100 users on start' do
+      expect(User.left_beta_accounts).to eq 100
+    end
+
+    it 'returns max - registered users' do
+      allow(User).to receive(:count).and_return(1)
+      expect(User.left_beta_accounts).to eq 99
+      allow(User).to receive(:count).and_return(100)
+      expect(User.left_beta_accounts).to eq 0
+    end
+
+    it 'returns no negative values' do
+      allow(User).to receive(:count).and_return(101)
+      expect(User.left_beta_accounts).to eq 0
+    end
+  end
 end

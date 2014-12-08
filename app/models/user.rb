@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  MAX_USERS = 100
+
   has_many :nodes, dependent: :destroy
 
   before_create :generate_api_key
@@ -8,6 +10,15 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  def self.left_beta_accounts
+    registered_beta_accounts = User.count
+    if registered_beta_accounts < MAX_USERS
+      MAX_USERS - registered_beta_accounts
+    else
+      0
+    end
+  end
 
   private
 

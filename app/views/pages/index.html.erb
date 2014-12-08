@@ -6,13 +6,19 @@
     Many OsiriX Workstations. Only <em>one</em> DICOM Nodelist to manage.
   </h2>
   <br>
-  <p>
-    <%= link_to 'Sign up for FREE', new_user_registration_url,
-      class: 'btn btn-primary btn-lg' %>
-  </p>
-  <p>
-    (Hurry: Only 99 BETA seats left! Antoine took the first.)
-  </p>
+  <% if User.left_beta_accounts > 0 %>
+    <p>
+      <%= link_to 'Sign up for FREE', new_user_registration_url,
+        class: 'btn btn-primary btn-lg' %>
+    </p>
+    <p class='lead'>
+      (Hurry: Only <%= User.left_beta_accounts %> BETA seats left! Antoine claimed the first.)
+    </p>
+  <% else %>
+    <p class='lead'>
+      (Oops! No BETA seats left! Hang on a few days and come back later.)
+    </p>
+  <% end %>
 </div>
 
 <h2>
@@ -54,8 +60,12 @@
   <em>OsiriX Nodes</em> lets you manage your DICOM nodelist online with your
   browser, and makes it accessible to your workstations over a private and
   secure URL.
-  Just <%= link_to 'sign up for free', new_user_registration_url %>, add your
-  nodes and update your workstations to use the new URL.
+  <% if User.left_beta_accounts > 0 %>
+    Just <%= link_to 'sign up for free', new_user_registration_url %>,
+  <% else %>
+    Just sign up for free (new BETA seats will be available soon),
+  <% end %>
+  add your nodes and update your workstations to use the new URL.
   Done.
   Workstations will pick up nodelist updates instantly on each OsiriX restart.
 
