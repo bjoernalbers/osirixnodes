@@ -22,6 +22,18 @@ class User < ActiveRecord::Base
 
   private
 
+  def email_required?
+    !guest?
+  end
+
+  def password_required?
+    !guest? && super
+  end
+
+  def confirmation_required?
+    !guest? && super
+  end
+
   def generate_api_key
     unless api_key.present?
       begin

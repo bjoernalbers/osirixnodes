@@ -12,10 +12,19 @@ RSpec.describe User, :type => :model do
     expect(user.nodes).to match_array [node]
   end
 
-  it 'validates email presence' do
-    user = build(:user, email: nil)
-    expect(user).to be_invalid
-    expect(user.errors[:email]).to_not be_empty
+  context 'without email' do
+    before do
+      user.email = nil
+    end
+
+    it 'is invalid' do
+      expect(user).to be_invalid
+      expect(user.errors[:email]).to_not be_empty
+    end
+
+    it 'can be saved' do
+      expect{ user.save!(validate: false) }.to_not raise_error
+    end
   end
 
   it 'validates password presence' do
@@ -27,13 +36,6 @@ RSpec.describe User, :type => :model do
   it 'validates api_key presence in database' do
     user = create(:user)
     user.api_key = nil
-    expect { user.save!(validate: false) }.to raise_error
-  end
-
-  it 'validates api_key uniqueness in database' do
-    other = create(:user)
-    user = create(:user)
-    user.api_key = other.api_key
     expect { user.save!(validate: false) }.to raise_error
   end
 
@@ -101,6 +103,34 @@ RSpec.describe User, :type => :model do
     it 'returns no negative values' do
       allow(User).to receive(:count).and_return(101)
       expect(User.left_beta_accounts).to eq 0
+    end
+  end
+
+  it 'requires confirmation' do
+    allow(user).to receive(:confirmed?).and_return(false)
+    expect(user.send(:confirmation_required?)).to be true
+  end
+
+  describe 'as guest' do
+    let(:user) { build(:user_as_guest) }
+
+    it 'is guest' do
+      expect(user).to be_guest
+    end
+
+    it 'does not validate email presence' do
+      user.email = nil
+      expect(user).to be_valid
+    end
+
+    it 'does not validate password presence' do
+      user.password = nil
+      expect(user).to be_valid
+    end
+
+    it 'requires no confirmation' do
+      allow(user).to receive(:confirmed?).and_return(false)
+      expect(user.send(:confirmation_required?)).to be false
     end
   end
 end
