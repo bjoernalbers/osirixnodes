@@ -20,19 +20,15 @@ class User < ActiveRecord::Base
     end
   end
 
+  # NOTE: A guest requires no email, password or confirmation.
+  [:email_required?, :password_required?, :confirmation_required?].each do |m|
+    # Override devise methods from validatable and confirmable modules.
+    define_method m do |*args|
+      !guest? && super(*args)
+    end
+  end
+
   private
-
-  def email_required?
-    !guest?
-  end
-
-  def password_required?
-    !guest? && super
-  end
-
-  def confirmation_required?
-    !guest? && super
-  end
 
   def generate_api_key
     unless api_key.present?
