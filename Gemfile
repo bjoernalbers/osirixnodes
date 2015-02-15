@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 ruby '2.1.2'
 
+# Heroku
+gem 'puma', '~> 2.11'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
 # Use sqlite3 as the database for Active Record
@@ -34,9 +37,6 @@ gem 'spring',        group: :development
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'pg', '~> 0.17'
-
-# Use unicorn as the app server
-gem 'unicorn', '~> 4.8'
 
 # Devise for authentication
 gem 'devise', '~> 3.4'
