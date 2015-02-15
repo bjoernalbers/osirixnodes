@@ -20,4 +20,3 @@
 
 # Ignore secret database credentials
 /config/database.yml
-/config/secrets.yml
