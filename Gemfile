@@ -6,6 +6,7 @@ ruby '2.1.2'
 gem 'puma', '~> 2.11'
 gem 'pg', '~> 0.18'
 gem 'rails_12factor', group: :production
+gem 'rack-timeout'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
