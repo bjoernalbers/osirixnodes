@@ -1,11 +1,6 @@
-include Warden::Test::Helpers
-Warden.test_mode!
-
 feature 'Edit Nodes' do
   scenario 'with valid attributes' do
-    user = FactoryGirl.create(:user)
-    node = FactoryGirl.create(:node, user: user, name: 'Chunky')
-    login_as(user, :scope => :user)
+    node = FactoryGirl.create(:node, name: 'Chunky')
 
     visit '/'
 

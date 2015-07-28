@@ -15,8 +15,5 @@
 /log/*.log
 /tmp
 
-# Ignore SSL files (cert. and private key)
-/config/ssl_*
-
-# Ignore secret database credentials
-/config/database.yml
+# Ignore site-specific deployment configuration.
+/config/deploy

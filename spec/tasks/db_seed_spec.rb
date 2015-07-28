@@ -4,18 +4,13 @@ require 'rake'
 Osirixnodes::Application.load_tasks
 
 describe 'db:seed' do
-  # User
-  let(:api_key) { 'example' } # https://osirixnodes.com/plist/example
-  let(:email)   { 'example@osirixnodes.com' }
-
   # Node
   let(:name)    { 'A boring example node' }
   let(:aetitle) { 'OSIRIXNODES_COM' }
   let(:address) { '127.0.0.1' }
   let(:port)    { 11112 }
 
-  let(:user) { User.find_by(api_key: api_key) }
-  let(:node) { user.nodes.first }
+  let(:node) { Node.last }
 
   def run_task
     Rake::Task['db:seed'].invoke
@@ -23,12 +18,6 @@ describe 'db:seed' do
   end
 
   shared_examples_for 'db:seed' do
-    it 'creates example user' do
-      expect(user.email).to eq(email)
-      password = Rails.application.secrets.example_user_password
-      expect(user.valid_password?(password)).to be true
-    end
-
     it 'creates example node' do
       expect(node.name).to    eq(name)
       expect(node.aetitle).to eq(aetitle)
@@ -47,9 +36,8 @@ describe 'db:seed' do
 
   context 'with seeded database' do
     before do
-      # Seed database with wrong example user and node.
-      user = create(:user, api_key: api_key)
-      node = create(:node, user: user)
+      # Seed database with wrong example node.
+      node = create(:node)
       run_task
     end
 

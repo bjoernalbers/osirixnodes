@@ -4,6 +4,5 @@ FactoryGirl.define do
     address { Faker::Internet.ip_v4_address }
     port { %w(104 3140 4096 4444 5678 11112).sample }
     aetitle { name.upcase.gsub(/[^A-Z]/, '') unless name.nil? }
-    user
   end
 end
