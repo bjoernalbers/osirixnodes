@@ -1,8 +1,11 @@
+# TODO: Remove example user!
 # Example User
 user = User.find_or_initialize_by(api_key: 'example')
 user.update!(email:    'example@osirixnodes.com',
-             password: Rails.application.secrets.example_user_password)
-user.confirm!
+             password: 'chunkybacon')
+             #password: Rails.application.secrets.example_user_password)
+user.confirm
+#user.confirm! # NOTE: This one is deprecated.
 
 # Example Node
 node = user.nodes.first_or_initialize

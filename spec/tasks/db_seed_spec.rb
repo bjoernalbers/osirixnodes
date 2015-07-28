@@ -22,10 +22,11 @@ describe 'db:seed' do
     Rake::Task['db:seed'].reenable # Otherwise the task would run only once.
   end
 
+  # TODO: Remove spec for example user!
   shared_examples_for 'db:seed' do
     it 'creates example user' do
       expect(user.email).to eq(email)
-      password = Rails.application.secrets.example_user_password
+      password = 'chunkybacon'
       expect(user.valid_password?(password)).to be true
     end
 
