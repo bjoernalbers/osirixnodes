@@ -123,7 +123,6 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
     netrc (0.10.3)
-    newrelic_rpm (3.12.1.298)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
@@ -242,7 +241,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mailgun_rails (~> 0.6)
-  newrelic_rpm
   plist (~> 3.1)
   puma (~> 2.12)
   rails (= 4.2.3)
