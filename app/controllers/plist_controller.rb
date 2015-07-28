@@ -1,8 +1,7 @@
 class PlistController < ApplicationController
-  skip_before_filter :authenticate_user!
   before_filter :set_default_response_format
      
-  respond_to :xml
+  #respond_to :xml
 
   def show
     user = User.find_by(api_key: params[:id])

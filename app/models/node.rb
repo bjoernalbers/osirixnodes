@@ -19,9 +19,6 @@ class Node < ActiveRecord::Base
     5  => 'JPEG Lossless',
   }
 
-  belongs_to :user
-
-  validates :user, presence: true
   validates :name, presence: true
   validates :aetitle, presence: true
   validates :address, presence: true

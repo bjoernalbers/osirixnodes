@@ -1,26 +1,19 @@
 require 'rails_helper'
 
 describe NodesController do
-  let(:user) { create(:user) }
-
-  before do
-    sign_in user
-  end
-
   describe 'GET #index' do
     it 'assigns the nodes' do
-      node = create(:node, user: user)
+      node = create(:node)
       get :index
       expect(assigns(:nodes)).to match_array [node]
     end
   end
 
   describe 'GET #new' do
-    it 'assigns a new user node' do
+    it 'assigns a new node' do
       get :new
       expect(assigns(:node).class).to eq(Node)
       expect(assigns(:node)).to be_new_record
-      expect(assigns(:node).user).to eq(user)
     end
   end
 
@@ -28,10 +21,10 @@ describe NodesController do
     context 'with valid attributes' do
       let(:attributes) { attributes_for(:node) }
 
-      it 'creates new user node' do
+      it 'creates new node' do
         expect{
           post :create, node: attributes
-        }.to change{user.nodes.count}.by(1)
+        }.to change(Node, :count).by(1)
       end
 
       it 'redirects to nodes page' do
@@ -61,12 +54,12 @@ describe NodesController do
   end
 
   describe 'DELETE #destroy' do
-    let!(:node) { create(:node, user: user) }
+    let!(:node) { create(:node) }
 
     it 'deletes node' do
       expect{
         delete :destroy, id: node
-      }.to change{user.nodes.count}.by(-1)
+      }.to change(Node, :count).by(-1)
     end
 
     it 'redirects to nodes page' do
@@ -81,7 +74,7 @@ describe NodesController do
   end
 
   describe 'GET #edit' do
-    let!(:node) { create(:node, user: user) }
+    let!(:node) { create(:node) }
 
     it 'assigns node' do
       get :edit, id: node
@@ -90,7 +83,7 @@ describe NodesController do
   end
 
   describe 'PATCH #update' do
-    let!(:node) { create(:node, user: user) }
+    let!(:node) { create(:node) }
 
     context 'with valid attributes' do
       let(:attributes) { attributes_for(:node) }

@@ -36,11 +36,6 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Devise for authentication
-gem 'devise', '~> 3.4'
-
-gem 'mailgun_rails', '~> 0.6'
-
 group :development do
   gem 'capistrano', '~> 3.2'
   gem 'capistrano-rails', '~> 1.1'

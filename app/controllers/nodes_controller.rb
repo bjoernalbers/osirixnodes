@@ -38,7 +38,7 @@ class NodesController < ApplicationController
   private
 
   def nodes
-    current_user.nodes
+    Node.all
   end
 
   def node_params

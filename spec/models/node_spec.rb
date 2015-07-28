@@ -7,21 +7,6 @@ RSpec.describe Node, :type => :model do
     expect(node).to be_valid
   end
 
-  it 'belongs to user' do
-    expect(node.user.class).to be User
-  end
-
-  it 'validates user presence' do
-    node = build(:node, user: nil)
-    expect(node).to be_invalid
-    expect(node.errors[:user]).to_not be_empty
-  end
-
-  it 'validates user presence in database' do
-    node = build(:node, user: nil)
-    expect { node.save!(validate: false) }.to raise_error
-  end
-
   it 'validates name presence' do
     node = build(:node, name: nil)
     expect(node).to be_invalid
