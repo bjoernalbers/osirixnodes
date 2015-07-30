@@ -7,9 +7,11 @@
   <key>EnvironmentVariables</key>
   <dict>
     <key>RAILS_ENV</key>
-    <string>production</string>
+    <string><%= fetch(:rails_env) %></string>
     <key>PORT</key>
-    <string>8080</string>
+    <string><%= fetch(:port) %></string>
+    <key>SECRET_KEY_BASE</key>
+    <string><%= fetch(:secret_key_base) %></string>
   </dict>
   <key>ProgramArguments</key>
   <array>
