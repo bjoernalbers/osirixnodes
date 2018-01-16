@@ -6,7 +6,7 @@ Osirixnodes::Application.load_tasks
 describe 'db:seed' do
   # Node
   let(:name)    { 'A boring example node' }
-  let(:aetitle) { 'OSIRIXNODES_COM' }
+  let(:aetitle) { 'OSIRIXNODES' }
   let(:address) { '127.0.0.1' }
   let(:port)    { 11112 }
 
