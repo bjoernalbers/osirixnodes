@@ -10,11 +10,13 @@ feature 'Edit Nodes' do
     fill_in 'Name', with: 'Bacon'
     uncheck 'Q&R'
     fill_in 'WADO-Port', with: '8088'
+    select 'JPEG LS Lossless', from: 'WADO-Transfer Syntax'
     click_button 'Update Node'
 
     node.reload
     expect(node.name).to eq('Bacon')
     expect(node.wado_port).to eq 8088
+    expect(node.wado_transfer_syntax).to eq 13
     expect(node.qr).to eq false
     
     # check that we're on the nodes page

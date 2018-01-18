@@ -27,3 +27,4 @@ en:
       node:
         qr: Q&R
         wado_port: WADO-Port
+        wado_transfer_syntax: WADO-Transfer Syntax

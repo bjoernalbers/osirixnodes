@@ -9,6 +9,7 @@
       <th>Port</th>
       <th><%= Node.human_attribute_name :qr %></th>
       <th><%= Node.human_attribute_name :wado_port %></th>
+      <th><%= Node.human_attribute_name :wado_transfer_syntax %></th>
       <th>Retrieve Mode</th>
       <th>Transfer Syntax</th>
       <th colspan="2"></th>
@@ -24,6 +25,7 @@
         <td><%= node.port %></td>
         <td><input type="checkbox" disabled="disabled" <%= 'checked' if node.qr %>></td>
         <td><%= node.wado_port %></td>
+        <td><%= node.wado_transfer_syntax_name %></td>
         <td><%= node.retrieve_mode_name %></td>
         <td><%= node.transfer_syntax_name %></td>
         <td><%= link_to 'Edit', edit_node_path(node) %></td>

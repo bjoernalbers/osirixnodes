@@ -50,6 +50,7 @@ class NodesController < ApplicationController
       :qr,
       :retrieve_mode,
       :transfer_syntax,
-      :wado_port)
+      :wado_port,
+      :wado_transfer_syntax)
   end
 end
