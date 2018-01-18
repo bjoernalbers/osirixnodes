@@ -54,6 +54,10 @@ describe 'GET /nodes.plist' do
     expect(first_node['TransferSyntax']).to eq(node.transfer_syntax)
   end
 
+  it 'includes Type' do
+    expect(first_node['Type']).to eq 'DICOM'
+  end
+
   it 'includes node retrieve mode' do
     expect(first_node['retrieveMode']).to eq(node.retrieve_mode)
   end
