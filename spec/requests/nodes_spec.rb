@@ -3,7 +3,7 @@ describe 'GET /nodes.plist' do
     @plist_response ||= Plist::parse_xml(response.body)
   end
 
-  let!(:node) { create(:node) }
+  let!(:node) { create(:node, qr: false) }
   let(:first_node) { plist_response.first }
 
   before do
@@ -36,6 +36,10 @@ describe 'GET /nodes.plist' do
 
   it 'includes node ports' do
     expect(first_node['Port']).to eq(node.port)
+  end
+
+  it 'includes node qr' do
+    expect(first_node['QR']).to eq node.qr
   end
 
   it 'includes node transfer syntax' do

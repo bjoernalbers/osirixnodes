@@ -54,4 +54,21 @@ RSpec.describe Node, :type => :model do
       expect(subject.retrieve_mode_name).to eq 'C-MOVE'
     end
   end
+
+  describe '#qr' do
+    it 'defaults to true' do
+      expect(subject.qr).to eq true
+    end
+
+    it 'can be false' do
+      subject = build(:node, qr: false)
+      expect(subject.qr).to eq false
+    end
+
+    it 'validates presence in db' do
+      subject = build(:node, qr: nil)
+      expect{ subject.save!(validate: false) }.
+        to raise_error(ActiveRecord::ActiveRecordError)
+    end
+  end
 end

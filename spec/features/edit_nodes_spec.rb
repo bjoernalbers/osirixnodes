@@ -8,12 +8,12 @@ feature 'Edit Nodes' do
     
     click_link 'Edit'
     fill_in 'Name', with: 'Bacon'
+    uncheck 'Q&R'
     click_button 'Update Node'
 
     node.reload
     expect(node.name).to eq('Bacon')
-    expect(page).to have_content('Bacon')
-    expect(page).to_not have_content('Chunky')
+    expect(node.qr).to eq false
     
     # check that we're on the nodes page
   end

@@ -40,6 +40,13 @@
   </div>
 
   <div class='form-group'>
+    <%= f.label :qr, class: 'control-label col-md-2' %>
+    <div class='col-md-3'>
+      <%= f.check_box :qr, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class='form-group'>
     <%= f.label :retrieve_mode, class: 'control-label col-md-2' %>
     <div class='col-md-3'>
       <%= f.select :retrieve_mode, Node::RETRIEVE_MODE.collect { |k,v| [v, k] }, {}, {class: 'form-control'} %>
