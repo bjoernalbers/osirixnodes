@@ -21,7 +21,7 @@
         <td><%= node.aetitle %></td>
         <td><%= node.address %></td>
         <td><%= node.port %></td>
-        <td><%= node.qr %></td>
+        <td><input type="checkbox" disabled="disabled" <%= 'checked' if node.qr %>></td>
         <td><%= node.retrieve_mode_name %></td>
         <td><%= node.transfer_syntax_name %></td>
         <td><%= link_to 'Edit', edit_node_path(node) %></td>
