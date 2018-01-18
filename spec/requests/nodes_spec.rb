@@ -3,7 +3,7 @@ describe 'GET /nodes.plist' do
     @plist_response ||= Plist::parse_xml(response.body)
   end
 
-  let!(:node) { create(:node, qr: false) }
+  let!(:node) { create(:node, qr: false, wado_port: 8088) }
   let(:first_node) { plist_response.first }
 
   before do
@@ -56,6 +56,10 @@ describe 'GET /nodes.plist' do
 
   it 'includes Type' do
     expect(first_node['Type']).to eq 'DICOM'
+  end
+
+  it 'includes WADOPort' do
+    expect(first_node['WADOPort']).to eq 8088
   end
 
   it 'includes retrieveMode' do

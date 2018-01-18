@@ -43,6 +43,13 @@ class NodesController < ApplicationController
 
   def node_params
     params.require(:node).permit(
-      :name, :aetitle, :address, :port, :qr, :retrieve_mode, :transfer_syntax)
+      :address,
+      :aetitle,
+      :name,
+      :port,
+      :qr,
+      :retrieve_mode,
+      :transfer_syntax,
+      :wado_port)
   end
 end

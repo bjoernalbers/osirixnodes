@@ -26,3 +26,4 @@ en:
     attributes:
       node:
         qr: Q&R
+        wado_port: WADO-Port
