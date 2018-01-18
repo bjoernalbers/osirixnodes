@@ -38,8 +38,16 @@ describe 'GET /nodes.plist' do
     expect(first_node['Port']).to eq(node.port)
   end
 
-  it 'includes node qr' do
+  it 'includes QR' do
     expect(first_node['QR']).to eq node.qr
+  end
+
+  it 'includes TLSAuthenticated' do
+    expect(first_node['TLSAuthenticated']).to eq false
+  end
+
+  it 'includes TLSEnabled' do
+    expect(first_node['TLSEnabled']).to eq false
   end
 
   it 'includes node transfer syntax' do
