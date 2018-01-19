@@ -2,7 +2,7 @@ class Node < ActiveRecord::Base
   RETRIEVE_MODE = {
     0 => 'C-MOVE',
     1 => 'C-GET',
-    #2 => 'WADO', # NOTE: Disables because of missing fields!
+    2 => 'WADO',
   }
 
   TRANSFER_SYNTAX = {
