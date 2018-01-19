@@ -6,7 +6,8 @@ describe 'GET /nodes.plist' do
   let!(:node) { create(:node,
     qr: false,
     wado_port: 8088,
-    wado_transfer_syntax: 13) }
+    wado_transfer_syntax: 13,
+    wado_url: 'chunkybacon') }
   let(:first_node) { plist_response.first }
 
   before do
@@ -67,6 +68,10 @@ describe 'GET /nodes.plist' do
 
   it 'includes WADOTransferSyntax' do
     expect(first_node['WADOTransferSyntax']).to eq 13
+  end
+
+  it 'includes WADOUrl' do
+    expect(first_node['WADOUrl']).to eq 'chunkybacon'
   end
 
   it 'includes retrieveMode' do

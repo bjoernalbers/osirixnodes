@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180118155353) do
+ActiveRecord::Schema.define(version: 20180118170317) do
 
   create_table "nodes", force: :cascade do |t|
     t.string   "name",                 limit: 255
@@ -21,11 +21,12 @@ ActiveRecord::Schema.define(version: 20180118155353) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "transfer_syntax_id"
-    t.integer  "transfer_syntax",                  default: 0,    null: false
-    t.integer  "retrieve_mode",                    default: 0,    null: false
-    t.boolean  "qr",                               default: true, null: false
+    t.integer  "transfer_syntax",                  default: 0,      null: false
+    t.integer  "retrieve_mode",                    default: 0,      null: false
+    t.boolean  "qr",                               default: true,   null: false
     t.integer  "wado_port",                        default: 8080
-    t.integer  "wado_transfer_syntax",             default: -1,   null: false
+    t.integer  "wado_transfer_syntax",             default: -1,     null: false
+    t.string   "wado_url",                         default: "wado"
   end
 
 end

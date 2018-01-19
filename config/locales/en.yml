@@ -28,3 +28,4 @@ en:
         qr: Q&R
         wado_port: WADO-Port
         wado_transfer_syntax: WADO-Transfer Syntax
+        wado_url: WADO-Path
