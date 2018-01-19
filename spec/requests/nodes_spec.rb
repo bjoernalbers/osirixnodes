@@ -5,6 +5,7 @@ describe 'GET /nodes.plist' do
 
   let!(:node) { create(:node,
     qr: false,
+    wado_https: true,
     wado_port: 8088,
     wado_transfer_syntax: 13,
     wado_url: 'chunkybacon') }
@@ -72,6 +73,10 @@ describe 'GET /nodes.plist' do
 
   it 'includes WADOUrl' do
     expect(first_node['WADOUrl']).to eq 'chunkybacon'
+  end
+
+  it 'includes WADOhttps' do
+    expect(first_node['WADOhttps']).to eq 1
   end
 
   it 'includes retrieveMode' do

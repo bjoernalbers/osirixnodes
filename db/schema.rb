@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180118170317) do
+ActiveRecord::Schema.define(version: 20180119113312) do
 
   create_table "nodes", force: :cascade do |t|
     t.string   "name",                 limit: 255
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20180118170317) do
     t.integer  "wado_port",                        default: 8080
     t.integer  "wado_transfer_syntax",             default: -1,     null: false
     t.string   "wado_url",                         default: "wado"
+    t.boolean  "wado_https",                       default: false,  null: false
   end
 
 end

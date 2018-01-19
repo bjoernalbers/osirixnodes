@@ -51,6 +51,7 @@ class NodesController < ApplicationController
       :retrieve_mode,
       :transfer_syntax,
       :wado_port,
+      :wado_https,
       :wado_transfer_syntax,
       :wado_url)
   end

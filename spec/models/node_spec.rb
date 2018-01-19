@@ -71,4 +71,21 @@ RSpec.describe Node, :type => :model do
         to raise_error(ActiveRecord::ActiveRecordError)
     end
   end
+
+  describe '#wado_https' do
+    it 'defaults to false' do
+      expect(subject.wado_https).to eq false
+    end
+
+    it 'can be false' do
+      subject = build(:node, wado_https: true)
+      expect(subject.wado_https).to eq true
+    end
+
+    it 'validates presence in db' do
+      subject = build(:node, wado_https: nil)
+      expect{ subject.save!(validate: false) }.
+        to raise_error(ActiveRecord::ActiveRecordError)
+    end
+  end
 end

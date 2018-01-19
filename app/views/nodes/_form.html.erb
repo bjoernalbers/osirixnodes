@@ -54,6 +54,13 @@
   </div>
 
   <div class='form-group'>
+    <%= f.label :wado_https, class: 'control-label col-md-2' %>
+    <div class='col-md-3'>
+      <%= f.check_box :wado_https, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class='form-group'>
     <%= f.label :wado_transfer_syntax, class: 'control-label col-md-2' %>
     <div class='col-md-3'>
       <%= f.select :wado_transfer_syntax, Node::WADO_TRANSFER_SYNTAX.collect { |k,v| [v, k] }, {}, {class: 'form-control'} %>
