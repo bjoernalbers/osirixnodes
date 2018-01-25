@@ -35,14 +35,6 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-group :development do
-  gem 'capistrano', '~> 3.2'
-  gem 'capistrano-rails', '~> 1.1'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rbenv', '~> 2.0'
-  gem 'capistrano-cookbook', require: false
-end
-
 group :development, :test do
   gem 'rspec-rails', '~> 3.3'
   gem 'faker', '~> 1.4'
