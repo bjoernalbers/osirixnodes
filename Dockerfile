@@ -11,4 +11,4 @@ COPY Gemfile* ./
 RUN bundle install
 
 EXPOSE 3000
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["bundle", "exec", "puma", "-b", "tcp://0.0.0.0:3000"]
