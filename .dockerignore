@@ -1,0 +1,9 @@
+.DS_Store
+.git
+.gitignore
+.rspec
+.ruby-version
+db/*.sqlite3
+db/*.sqlite3-journal
+log
+tmp
