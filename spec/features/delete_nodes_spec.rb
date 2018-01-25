@@ -1,6 +1,6 @@
 feature 'Delete Nodes' do
   scenario 'happy path' do
-    node = FactoryGirl.create(:node)
+    node = create(:node)
     expect(Node.count).not_to eq 0
 
     visit '/'

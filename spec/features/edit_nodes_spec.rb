@@ -1,6 +1,6 @@
 feature 'Edit Nodes' do
   scenario 'with valid attributes' do
-    node = FactoryGirl.create(:node, name: 'Chunky')
+    node = create(:node, name: 'Chunky')
 
     visit '/'
 

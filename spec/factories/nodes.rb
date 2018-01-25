@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :node do
     name { Faker::Internet.domain_word }
     address { Faker::Internet.ip_v4_address }

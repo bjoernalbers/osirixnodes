@@ -5,7 +5,7 @@ gem 'puma', '~> 3.11'
 gem 'lograge'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.3'
+gem 'rails', '4.2.10'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -40,7 +40,7 @@ group :development, :test do
   gem 'faker', '~> 1.4'
   gem 'capybara', '~> 2.4'
   gem 'database_cleaner', '~> 1.3'
-  gem 'factory_girl_rails', '~> 4.5'
+  gem 'factory_bot_rails', '~> 4.8'
   gem 'plist', '~> 3.1'
 end
 
