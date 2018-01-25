@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'thin', '~> 1.6'
+gem 'puma', '~> 3.11'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
