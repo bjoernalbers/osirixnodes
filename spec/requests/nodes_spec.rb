@@ -8,7 +8,8 @@ describe 'GET /nodes.plist' do
     wado_https: true,
     wado_port: 8088,
     wado_transfer_syntax: 13,
-    wado_url: 'chunkybacon') }
+    wado_url: 'chunkybacon',
+    retrieve_mode: 2) }
   let(:first_node) { plist_response.first }
 
   before do
