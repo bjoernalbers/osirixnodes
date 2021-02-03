@@ -102,7 +102,7 @@ GEM
       mini_portile2 (~> 2.3.0)
     plist (3.4.0)
     public_suffix (3.0.1)
-    puma (3.11.2)
+    puma (3.12.6)
     rack (1.6.8)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -206,7 +206,7 @@ DEPENDENCIES
   jquery-rails
   lograge
   plist (~> 3.1)
-  puma (~> 3.11)
+  puma (~> 3.12)
   rails (= 4.2.10)
   rspec-rails (~> 3.3)
   sass-rails (~> 5.0)
