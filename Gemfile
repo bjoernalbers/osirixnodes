@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 4.3'
 
 gem 'lograge'
 
