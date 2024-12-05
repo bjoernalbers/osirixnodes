@@ -2,6 +2,7 @@
 
 A simple DICOM Nodelist for OsiriX.
 
+**ATTENTION: This project has been retired!**
 
 ## Quickstart
 
